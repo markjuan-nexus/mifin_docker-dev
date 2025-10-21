@@ -6,9 +6,12 @@ services:
     image: "phpmyadmin"
     environment:
       - PMA_HOST=mysql
-      - UPLOAD_LIMIT=128M
-      - MEMORY_LIMIT=512M
-      - MAX_EXECUTION_TIME=1000
+      - UPLOAD_LIMIT=512M
+      - MEMORY_LIMIT=1024M
+      - MAX_EXECUTION_TIME=3600
+      - PHP_UPLOAD_MAX_FILESIZE=512M
+      - PHP_POST_MAX_SIZE=512M
+      - PHP_MAX_INPUT_VARS=3000
     links:
       - mysql
     ports:
